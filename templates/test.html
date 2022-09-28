@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../sidenav.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <title>Learn 2 Play guitar</title>
+</head>
+
+<body>
+<div class="sidenav">
+    <div class="main-sidenav">
+        <div id="header-title">
+            learn 2 play
+        </div>
+
+        <div class="search-form">
+            <input type="text" class="search-input" placeholder="search songs here...">
+            <a href="search-results.html" class="search-btn">search</a>
+        </div>
+
+        <hr/>
+
+        <div class="lessons">
+            <h4>Lessons</h4>
+
+            <a href="/lesson/1" class="{% if id == 1 %}selected{% endif %}">Lesson 1: Introduction</a>
+            <a href="/lesson/2" class="{% if id == 2 %}selected{% endif %}">Lesson 2: The basics</a>
+            <a href="/lesson/3" class="{% if id == 3 %}selected{% endif %}">Lesson 3: Intermediate</a>
+            <a href="/lesson/4" class="{% if id >= 4 %}selected{% endif %}">Lesson 4: Finishing up</a>
+        </div>
+    </div>
+
+    <div class="sidenav-take-test">
+        <a class="test-button">
+            <h4>Take the test!</h4>
+        </a>
+    </div>
+</div>
+
+<div id="other-side">
+
+    <main>
+        <form>
+            <h1>Final Test</h1>
+
+            <div class="question">
+                <label for="s1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, est possimus
+                    voluptatibus similique nisi at?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                           value="option1">
+                    <label class="form-check-label" for="exampleRadios1">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, commodi!
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                           value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, optio.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                           value="option3">
+                    <label class="form-check-label" for="exampleRadios3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eaque debitis, harum ab
+                        nam quibusdam.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4"
+                           value="option4">
+                    <label class="form-check-label" for="exampleRadios4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing.
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="s1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis eum nobis
+                    doloribus soluta porro a totam, deserunt odio expedita sint!</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="2exampleRadios" id="2exampleRadios1"
+                           value="option1">
+                    <label class="form-check-label" for="2exampleRadios1">
+                        Lorem ipsum dolor sit amet.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="2exampleRadios" id="2exampleRadios2"
+                           value="option2">
+                    <label class="form-check-label" for="2exampleRadios2">
+                        Lorem, ipsum dolor.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="2exampleRadios" id="2exampleRadios3"
+                           value="option3">
+                    <label class="form-check-label" for="2exampleRadios3">
+                        Officiis eaque debitis, harum ab nam quibusdam.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="2exampleRadios" id="2exampleRadios4"
+                           value="option4">
+                    <label class="form-check-label" for="2exampleRadios4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing.
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="s1">Veritatis eum nobis doloribus soluta porro a totam, deserunt odio expedita
+                    sint?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="22exampleRadios" id="22exampleRadios1"
+                           value="option1">
+                    <label class="form-check-label" for="22exampleRadios1">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo temporibus eius quidem. Omnis
+                        facilis sit magni a voluptatum nemo odit.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="22exampleRadios" id="22exampleRadios2"
+                           value="option2">
+                    <label class="form-check-label" for="22exampleRadios2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, fuga.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="22exampleRadios" id="22exampleRadios3"
+                           value="option3">
+                    <label class="form-check-label" for="22exampleRadios3">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="22exampleRadios" id="22exampleRadios4"
+                           value="option4">
+                    <label class="form-check-label" for="22exampleRadios4">
+                        Lorem, ipsum.
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores eos suscipit aliquam
+                    sint, iste dolorem. Iure eos animi consectetur facilis mollitia, cumque quidem excepturi ut cum,
+                    eveniet nisi sapiente. Ullam dicta blanditiis aspernatur iusto nulla temporibus assumenda.
+                    Vitae, accusantium illo.</label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+
+            <a href="/certificate" class="btn btn-light submit-btn" class="btn btn-light mb-5"
+               style="background-color: #564d78; color: #fdfdfd;">Submit your answers</a>
+        </form>
+    </main>
+
+</div>
+
+</body>
+
+</html>
+
+<style>
+    #other-side {
+        padding: 1em 3em;
+        margin-bottom: 1em;
+    }
+
+    form {
+        margin-bottom: 1em;
+    }
+
+    form h1 {
+        color: #564D78;
+    }
+
+    form .question {
+        margin-top: 1em;
+        padding: 2em;
+        border-radius: 1em;
+        background-color: #f8f8f8;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    form .question > label {
+        font-size: 1.2em;
+        margin-bottom: 1em;
+    }
+
+    .submit-btn {
+        margin: 1em 0;
+        margin-bottom: 2em !important;
+        height: 3em;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .submit-btn:hover {
+        background-color: #fdfdfd !important;
+        color: #564D78 !important;
+        border: 1px solid #564D78;
+    }
+
+    #other-side {
+        margin-left: 20vw;
+    }
+
+    main {
+        height: 100vh;
+        background-color: #fdfdfd;
+    }
+
+    /*  sidenav */
+
+    #header-title {
+        font-family: "Pacifico", cursive;
+        color: #564D78;
+        font-size: 2.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 20vw;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+
+        box-shadow: rgba(0, 0, 0, 0.1) 0px -10px 15px -3px inset, rgba(0, 0, 0, 0.05) 0px -4px 6px -2px inset;
+
+        background-color: #fdfdfd;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .sidenav .main-sidenav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidenav hr {
+        background-color: white;
+        width: 100%;
+        height: 2px;
+    }
+
+    /* lessons */
+
+    .lessons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 97.5%;
+    }
+
+    .lessons h4 {
+        color: #564D78;
+    }
+
+    .lessons a {
+        text-decoration: none;
+        color: #000;
+        background-color: #f1f1f1;
+
+        border-radius: 0.2em;
+
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        height: 3em;
+        margin: 0.1em 0;
+        padding: 0.1em 0.5em;
+    }
+
+    .lessons a:hover {
+        color: #fdfdfd;
+        background-color: #564D78;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .lessons .selected {
+        color: #fdfdfd;
+        background-color: #564D78;
+    }
+
+    /* search */
+
+    .search-form {
+        width: 100%;
+        padding: 0.5em;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .search-input {
+        border: none;
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+        border-radius: 1em 0 0 1em;
+
+        border: 1px solid #564D78;
+
+        width: 65%;
+        height: 3em;
+        padding: 0.5em;
+        margin: 0;
+    }
+
+    .search-btn {
+        color: #fdfdfd;
+        text-decoration: none;
+        cursor: pointer;
+
+        background-color: #564D78;
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+        border-radius: 0 1em 1em 0;
+
+        width: 30%;
+        height: 3em;
+        margin: 0;
+        padding: 0.2em;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-btn:hover {
+        background-color: rgba(148, 187, 233, 0.5);
+        color: #564D78;
+    }
+
+    /* test */
+
+    .sidenav-take-test {
+        width: 100%;
+    }
+
+    .sidenav-take-test a {
+        text-decoration: none;
+        color: #564D78;
+        display: inline-block;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        cursor: pointer;
+
+        width: 100%;
+        padding: 1em;
+
+        text-align: center;
+        background-color: #9ACBD0;
+    }
+
+    .sidenav-take-test a:hover {
+        color: #9ACBD0;
+        background-color: #564D78;
+    }
+
+</style>

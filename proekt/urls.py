@@ -20,6 +20,9 @@ from learn2play.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index, name='index'),
     path('index/', index, name='index'),
     path('lesson/<int:lesson_id>', lesson, name='lesson'),
+    path('test', test, name='test'),
+    path('certificate', certificate, name='certificate'),
 ]
