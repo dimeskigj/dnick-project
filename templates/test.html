@@ -18,14 +18,14 @@
 <body>
 <div class="sidenav">
     <div class="main-sidenav">
-        <div id="header-title">
+        <a id="header-title" href="/">
             learn 2 play
-        </div>
+        </a>
 
-        <div class="search-form">
-            <input type="text" class="search-input" placeholder="search songs here...">
-            <a href="search-results.html" class="search-btn">search</a>
-        </div>
+        <form method="get" action="/results" style="display: flex; flex-direction: row">
+            <input type="text" name="query" class="search-input" placeholder="search songs here...">
+            <button class="search-btn" type="submit">search</button>
+        </form>
 
         <hr/>
 
@@ -49,7 +49,7 @@
 <div id="other-side">
 
     <main>
-        <form>
+        <form class="question" method="get" action="/certificate">
             <h1>Final Test</h1>
 
             <div class="question">
@@ -158,13 +158,20 @@
                     sint, iste dolorem. Iure eos animi consectetur facilis mollitia, cumque quidem excepturi ut cum,
                     eveniet nisi sapiente. Ullam dicta blanditiis aspernatur iusto nulla temporibus assumenda.
                     Vitae, accusantium illo.</label>
-                <textarea class="form-control" rows="5" id="comment"></textarea>
+                <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
             </div>
 
-            <a href="/certificate" class="btn btn-light submit-btn" class="btn btn-light mb-5"
-               style="background-color: #564d78; color: #fdfdfd;">Submit your answers</a>
+            {#            <a href="/fail" class="btn btn-light submit-btn" class="btn btn-light mb-5"#}
+            {#               style="background-color: #564d78; color: #fdfdfd;">Submit your answers</a> #}
+            <button type="submit"
+                    class="btn btn-light submit-btn"
+                    class="btn btn-light mb-5"
+                    style="background-color: #564d78; color: #fdfdfd;">Submit
+                your answers
+            </button>
         </form>
     </main>
+
 
 </div>
 

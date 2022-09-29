@@ -18,15 +18,14 @@
 <body>
 <div class="sidenav">
     <div class="main-sidenav">
-        <div id="header-title">
+        <a id="header-title" href="/">
             learn 2 play
-        </div>
+        </a>
 
-        <div class="search-form">
-            <input type="text" class="search-input" placeholder="search songs here...">
-            <a href="search-results.html" class="search-btn">search</a>
-        </div>
-
+            <form method="get" action="/results" style="display: flex; flex-direction: row">
+                <input type="text" name="query" class="search-input" placeholder="search songs here...">
+                <button class="search-btn" type="submit">search</button>
+            </form>
         <hr/>
 
         <div class="lessons">

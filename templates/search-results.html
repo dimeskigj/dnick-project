@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../sidenav.css">
+    <link rel="stylesheet" type="text/css" href="search-results.css">
     <title>Learn 2 Play guitar</title>
 </head>
 
@@ -20,12 +22,10 @@
             learn 2 play
         </a>
 
-        <div class="search-form">
             <form method="get" action="/results" style="display: flex; flex-direction: row">
                 <input type="text" name="query" class="search-input" placeholder="search songs here...">
                 <button class="search-btn" type="submit">search</button>
             </form>
-        </div>
 
         <hr/>
 
@@ -46,55 +46,34 @@
 </div>
 
 <div id="other-side">
-    <div class="progress rounded-0">
-        <div class="progress-bar" role="progressbar"
-             style="width: {% if id == 1 %}25%{% endif %}{% if id == 2 %}50%{% endif %}{% if id == 3 %}75%{% endif %}{% if id >= 4 %}100%{% endif %}; background-color: #564d78;"></div>
-    </div>
     <main>
-        <h1>Lesson {{ id }}</h1>
-        <hr/>
-        <section>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam debitis in ratione eum assumenda
-                vel, facere natus ad earum numquam rem similique, suscipit facilis at minus optio veritatis veniam?
-                Dignissimos labore sapiente explicabo impedit ipsum doloremque.</p>
-        </section>
-        <section>
-            <h3>
-                Subheading 1
-            </h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis inventore magni accusantium
-                corporis maiores delectus provident id praesentium repellendus! Quibusdam voluptatibus deleniti
-                sequi neque delectus! Quidem, nostrum nihil. At magnam cumque ipsam quae sint inventore quibusdam,
-                eaque a porro neque magni dignissimos beatae asperiores dolor tenetur quas illum rem eius
-                doloremque. Saepe, unde nobis molestias distinctio explicabo numquam quia assumenda error iste quo,
-                ipsam aspernatur omnis nemo? Odit deserunt quis, neque voluptates voluptatum libero reprehenderit
-                facilis provident nulla totam fugiat magni maxime sequi modi! Fuga deserunt neque recusandae sint,
-                adipisci, dolor nisi vero minus iusto, ducimus dignissimos sunt aliquam iure!</p>
-            <img src="https://www.ipcc.ch/site/assets/uploads/sites/3/2019/10/img-placeholder.png">
-        </section>
-        <section>
-            <h3>
-                Subheading 2
-            </h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis inventore magni accusantium
-                corporis maiores delectus provident id praesentium repellendus! Quibusdam voluptatibus deleniti
-                sequi neque delectus! Quidem, nostrum nihil. At magnam cumque ipsam quae sint inventore quibusdam,
-                eaque a porro neque magni dignissimos beatae asperiores dolor tenetur quas illum rem eius
-                doloremque. Saepe, unde nobis molestias distinctio explicabo numquam quia assumenda error iste quo,
-                ipsam aspernatur omnis nemo?</p>
-            <img src="https://www.ipcc.ch/site/assets/uploads/sites/3/2019/10/img-placeholder.png">
-        </section>
+        <h1>Search results...</h1>
 
-        {% if id < 4 %}
-            <a href="/lesson/{{ id|add:"1" }}" class="btn btn-light mb-5 submit-btn"
-               style="background-color: #564d78; color: #fdfdfd;">go to next lesson...</a>
-        {% endif %}
-        {% if id >= 4 %}
-            <a href="/test" class="btn btn-light mb-5 submit-btn"
-               style="background-color: #564d78; color: #fdfdfd;">take the test!</a>
-        {% endif %}
+        <div class="list-group">
+            <a href="/song/{{ query }}/some artist" class="list-group-item list-group-item-action" aria-current="true">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{ query }} - Some Artist</h5>
+                    <small>Intermediate</small>
+                </div>
+                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                <small>And some small print.</small>
+            </a>
+            {% for song in songs %}
+                <a href="/song/{{ song.song_name.title }}/{{ song.artist_name.title }}"
+                   class="list-group-item list-group-item-action" aria-current="true">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{ song.song_name.title }} - {{ song.artist_name.title }}</h5>
+                        <small>Intermediate</small>
+                    </div>
+                    <p class="mb-1">Some placeholder content in a paragraph.</p>
+                    <small>And some small print.</small>
+                </a>
+            {% endfor %}
+            <p class="list-group-item text-center">
+                end of results
+            </p>
+        </div>
     </main>
-
 </div>
 
 </body>
@@ -102,42 +81,6 @@
 </html>
 
 <style>
-    main {
-        padding: 1em 3em;
-    }
-
-    main h1 {
-        color: #564d78;
-    }
-
-    main section {
-        display: flex;
-        flex-direction: column;
-    }
-
-    main section h3 {
-        color: #564d78;
-    }
-
-    main section p {
-        text-align: justify;
-    }
-
-    main section img {
-        align-self: center;
-        padding-bottom: 2em;
-    }
-
-    .submit-btn:hover {
-        background-color: #fdfdfd !important;
-        color: #564D78 !important;
-        border: 1px solid #564D78;
-    }
-
-    /* progress */
-
-    /* */
-
     #other-side {
         margin-left: 20vw;
     }
@@ -297,5 +240,13 @@
     .sidenav-take-test a:hover {
         color: #9ACBD0;
         background-color: #564D78;
+    }
+
+    main {
+        padding: 1em 3em;
+    }
+
+    h5, h1 {
+        color: #564d78;
     }
 </style>

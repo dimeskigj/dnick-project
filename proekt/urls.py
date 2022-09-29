@@ -25,4 +25,7 @@ urlpatterns = [
     path('lesson/<int:lesson_id>', lesson, name='lesson'),
     path('test', test, name='test'),
     path('certificate', certificate, name='certificate'),
+    path('results', results, name='results'),
+    path('fail', fail, name='fail'),
+    path('song/<str:song_name>/<str:artist_name>', song, name='song'),
 ]

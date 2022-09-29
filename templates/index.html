@@ -16,15 +16,14 @@
 <body>
 <div class="sidenav">
     <div class="main-sidenav">
-        <div id="header-title">
+        <a id="header-title" href="/">
             learn 2 play
-        </div>
+        </a>
 
-        <div class="search-form">
-            <input type="text" class="search-input" placeholder="search songs here...">
-            <a href="views/search-results.html" class="search-btn">search</a>
-        </div>
-
+        <form method="get" action="/results" style="display: flex; flex-direction: row">
+            <input type="text" name="query" class="search-input" placeholder="search songs here...">
+            <button class="search-btn" type="submit">search</button>
+        </form>
         <hr/>
 
         <div class="lessons">
@@ -48,7 +47,8 @@
 
     <main>
         <h1>Welcome to learn 2 play</h1>
-        <h3>Start with your first lesson <a href="views/lesson1.html">here</a>.</h3>
+        <h3>System for learning how to play the guitar</h3>
+        <a href="/lesson/1" class="btn btn-light p-3 submit-btn"><h3>Start with your first lesson</h3></a>
     </main>
 
 </div>
@@ -92,6 +92,25 @@
     main {
         height: 100vh;
         background-color: #fdfdfd;
+    }
+
+    .submit-btn:hover {
+        background-color: #fdfdfd !important;
+        color: #564D78 !important;
+        border: 1px solid #564D78;
+    }
+
+    .submit-btn {
+        background-color: #564D78 !important;
+
+    }
+
+    .submit-btn h3 {
+        color: #fdfdfd !important;
+    }
+
+    .submit-btn:hover h3 {
+        color: #564D78 !important;
     }
 
     /*  sidenav */

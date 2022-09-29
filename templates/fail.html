@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../sidenav.css">
+    <link rel="stylesheet" type="text/css" href="certificate.css">
     <title>Learn 2 Play guitar</title>
 </head>
 
@@ -20,17 +22,15 @@
             learn 2 play
         </a>
 
-        <div class="search-form">
-            <form method="get" action="/results" style="display: flex; flex-direction: row">
-                <input type="text" name="query" class="search-input" placeholder="search songs here...">
-                <button class="search-btn" type="submit">search</button>
-            </form>
-        </div>
-
+        <form method="get" action="/results" style="display: flex; flex-direction: row">
+            <input type="text" name="query" class="search-input" placeholder="search songs here...">
+            <button class="search-btn" type="submit">search</button>
+        </form>
         <hr/>
 
         <div class="lessons">
             <h4>Lessons</h4>
+
             <a href="/lesson/1" class="{% if id == 1 %}selected{% endif %}">Lesson 1: Introduction</a>
             <a href="/lesson/2" class="{% if id == 2 %}selected{% endif %}">Lesson 2: The basics</a>
             <a href="/lesson/3" class="{% if id == 3 %}selected{% endif %}">Lesson 3: Intermediate</a>
@@ -46,55 +46,14 @@
 </div>
 
 <div id="other-side">
-    <div class="progress rounded-0">
-        <div class="progress-bar" role="progressbar"
-             style="width: {% if id == 1 %}25%{% endif %}{% if id == 2 %}50%{% endif %}{% if id == 3 %}75%{% endif %}{% if id >= 4 %}100%{% endif %}; background-color: #564d78;"></div>
-    </div>
     <main>
-        <h1>Lesson {{ id }}</h1>
-        <hr/>
-        <section>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam debitis in ratione eum assumenda
-                vel, facere natus ad earum numquam rem similique, suscipit facilis at minus optio veritatis veniam?
-                Dignissimos labore sapiente explicabo impedit ipsum doloremque.</p>
-        </section>
-        <section>
-            <h3>
-                Subheading 1
-            </h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis inventore magni accusantium
-                corporis maiores delectus provident id praesentium repellendus! Quibusdam voluptatibus deleniti
-                sequi neque delectus! Quidem, nostrum nihil. At magnam cumque ipsam quae sint inventore quibusdam,
-                eaque a porro neque magni dignissimos beatae asperiores dolor tenetur quas illum rem eius
-                doloremque. Saepe, unde nobis molestias distinctio explicabo numquam quia assumenda error iste quo,
-                ipsam aspernatur omnis nemo? Odit deserunt quis, neque voluptates voluptatum libero reprehenderit
-                facilis provident nulla totam fugiat magni maxime sequi modi! Fuga deserunt neque recusandae sint,
-                adipisci, dolor nisi vero minus iusto, ducimus dignissimos sunt aliquam iure!</p>
-            <img src="https://www.ipcc.ch/site/assets/uploads/sites/3/2019/10/img-placeholder.png">
-        </section>
-        <section>
-            <h3>
-                Subheading 2
-            </h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis inventore magni accusantium
-                corporis maiores delectus provident id praesentium repellendus! Quibusdam voluptatibus deleniti
-                sequi neque delectus! Quidem, nostrum nihil. At magnam cumque ipsam quae sint inventore quibusdam,
-                eaque a porro neque magni dignissimos beatae asperiores dolor tenetur quas illum rem eius
-                doloremque. Saepe, unde nobis molestias distinctio explicabo numquam quia assumenda error iste quo,
-                ipsam aspernatur omnis nemo?</p>
-            <img src="https://www.ipcc.ch/site/assets/uploads/sites/3/2019/10/img-placeholder.png">
-        </section>
 
-        {% if id < 4 %}
-            <a href="/lesson/{{ id|add:"1" }}" class="btn btn-light mb-5 submit-btn"
-               style="background-color: #564d78; color: #fdfdfd;">go to next lesson...</a>
-        {% endif %}
-        {% if id >= 4 %}
-            <a href="/test" class="btn btn-light mb-5 submit-btn"
-               style="background-color: #564d78; color: #fdfdfd;">take the test!</a>
-        {% endif %}
+        <div>
+            <h1 class="m-auto">You failed the test! ☹</h1>
+            <a href="/test" class="btn btn-light submit-btn" class="btn btn-light mb-5"
+               style="background-color: #564d78; color: #fdfdfd;">Try again</a>
+        </div>
     </main>
-
 </div>
 
 </body>
@@ -103,29 +62,33 @@
 
 <style>
     main {
-        padding: 1em 3em;
-    }
-
-    main h1 {
-        color: #564d78;
-    }
-
-    main section {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
-    main section h3 {
-        color: #564d78;
+    img {
+        max-width: 75%;
     }
 
-    main section p {
-        text-align: justify;
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
     }
 
-    main section img {
-        align-self: center;
-        padding-bottom: 2em;
+    main div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .submit-btn {
+        display: inline-block;
+        margin: 1em;
+        width: 100%;
     }
 
     .submit-btn:hover {
@@ -133,8 +96,6 @@
         color: #564D78 !important;
         border: 1px solid #564D78;
     }
-
-    /* progress */
 
     /* */
 
